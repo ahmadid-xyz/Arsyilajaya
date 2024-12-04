@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengkel Las Arsyila Jaya Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f3f3f3;
+        }
+        .slideshow {
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .slides img {
+            width: 100%;
+            display: none;
+        }
+        .slides img.active {
+            display: block;
+        }
+        .address {
+            margin: 20px auto;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        .address h3 {
+            margin: 0 0 10px;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .buttons button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeri Bisnis</h1>
+    <div class="slideshow">
+        <div class="slides">
+            <img src="foto1.jpg" alt="Foto 1" class="active">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="foto 4">
+            <img src="foto5.jpg" alt="foto 5">
+            <img src="foto6.jpg" alt="foto 6">
+            <img src="foto7.jpg" alt="foto 7">
+        </div>
+        <div class="buttons">
+            <button onclick="prevSlide()">Sebelumnya</button>
+            <button onclick="nextSlide()">Selanjutnya</button>
+        </div>
+    </div>
+    <div class="address">
+        <p><h3>INGIN MENGHUBUNGI KAMI? SILAHKAN HUBUNGI NOMOR DI BAWAH INI👇</h3></p>
+        <p><h3>081291253646</h3></p>
+        <br>
+        <h3>ALAMAT KAMI👇</h3>
+        <p><h3>Jln. Kali Licin No. 156,Pancoran Mas Depok, Indonesia</h3></p>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
+            });
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex > 0) ? currentSlideIndex - 1 : slides.length - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex < slides.length - 1) ? currentSlideIndex + 1 : 0;
+            showSlide(currentSlideIndex);
+        }
+    </script>
+</body>
+</html>
