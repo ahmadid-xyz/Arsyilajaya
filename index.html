@@ -10,9 +10,18 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f0f0f5;
-            color: #333;
+            background: linear-gradient(45deg, #0099cc, #6600cc, #ff6699, #33cc33);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: #fff;
             overflow-x: hidden;
+        }
+
+        /* Keyframes for Background Animation */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Loading Animation */
@@ -22,20 +31,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #007BFF, #0056b3);
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            animation: fadeOut 2s ease-out 1s forwards;
         }
 
         .loading-screen div {
-            width: 50px;
-            height: 50px;
-            border: 5px solid transparent;
-            border-top: 5px solid #fff;
+            width: 60px;
+            height: 60px;
+            border: 10px solid transparent;
+            border-top: 10px solid #ff6699;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 1.5s linear infinite;
         }
 
         @keyframes spin {
@@ -43,17 +53,31 @@
             100% { transform: rotate(360deg); }
         }
 
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
         /* Header */
         header {
-            background: linear-gradient(90deg, #333, #111);
-            color: #fff;
             text-align: center;
-            padding: 20px;
-            font-size: 28px;
+            padding: 100px 20px 50px;
+            font-size: 40px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: neonGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            0% {
+                text-shadow: 0 0 5px #ff6699, 0 0 10px #ff6699, 0 0 15px #ff6699, 0 0 20px #ff6699;
+            }
+            100% {
+                text-shadow: 0 0 10px #ff6699, 0 0 20px #ff6699, 0 0 30px #ff6699, 0 0 40px #ff6699;
+            }
         }
 
         /* Slideshow */
@@ -108,7 +132,7 @@
             margin: 50px auto;
             padding: 30px;
             text-align: center;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
@@ -154,6 +178,7 @@
             margin-top: 30px;
             font-size: 14px;
             letter-spacing: 1px;
+            animation: neonGlow 1.5s ease-in-out infinite alternate;
         }
     </style>
 </head>
@@ -178,6 +203,12 @@
             <img src="foto5.jpg" alt="Foto 5">
             <img src="foto6.jpg" alt="Foto 6">
             <img src="foto7.jpg" alt="Foto 7">
+            <img src="foto8.jpg" alt="Foto 8">
+            <img src="foto9.jpg" alt="Foto 9">
+            <img src="foto10.jpg" alt="Foto 10">
+            <img src="foto11.jpg" alt="Foto 11">
+            <img src="foto12.jpg" alt="Foto 12">
+            <img src="foto13.jpg" alt="Foto 13">
         </div>
         <div class="buttons">
             <button onclick="prevSlide()">❮ Sebelumnya</button>
